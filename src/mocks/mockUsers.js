@@ -60,7 +60,7 @@ export const generateMockData = async (userQty = 10, petQty = 10) => {
 
     const createdPets = await Pet.insertMany(pets);
 
-//Asociar mascotas a sus dueños
+// Asociar mascotas a sus dueños
     for (const pet of createdPets) {
         const owner = createdUsers.find(user => user._id.equals(pet.owner));
         if (owner) {
