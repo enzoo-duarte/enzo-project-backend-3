@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJsDoc from 'swagger-jsdoc';
 
 dotenv.config(); 
 
@@ -26,6 +28,21 @@ mongoose.connect(MONGO_URI)
 app.use(express.json());
 app.use(cookieParser());
 
+// Swagger
+const swaggerOptions = {
+    definition: {
+        openapi: '3.0.1',
+        info: {
+            title: 'API del poder y del saber',
+            description: 'Documentación de la API pensada para la clase de Swagger'
+        }
+    },
+    apis: [`${__dirname}/docs/**/*.yaml`]
+};
+
+const specs = swaggerJsDoc(swaggerOptions);
+
+app.use('/apidocs', swaggerUi.serve, swaggerUi.setup(specs));
 // Rutas
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
