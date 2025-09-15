@@ -1,0 +1,26 @@
+# Dependencias
+node_modules
+.npm
+npm-debug.log
+yarn.lock
+
+# Builds y temporales
+dist
+build
+coverage
+logs
+tmp
+
+# Git y debug
+.git
+.gitignore
+.DS_Store
+*.swp
+
+# Config y editores
+.vscode
+.idea
+
+# Archivos sensibles
+.env
+.aws
