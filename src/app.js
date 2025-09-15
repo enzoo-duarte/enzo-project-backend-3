@@ -33,5 +33,4 @@ app.use('/api/adoptions', adoptionsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/mocks', mocksRouter);
 
-//Inicio del server
-app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+export default app;
