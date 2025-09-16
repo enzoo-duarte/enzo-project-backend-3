@@ -1,0 +1,8 @@
+# users.yaml
+
+paths:
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios
+      tags:
+        - Users
