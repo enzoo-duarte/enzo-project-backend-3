@@ -39,7 +39,7 @@ const swaggerOptions = {
             },
         ],
     },
-    apis: [`${__dirname}/docs/**/*.yaml`]
+    apis: ['./src/docs/*.yaml']
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
